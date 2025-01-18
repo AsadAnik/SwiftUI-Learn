@@ -10,15 +10,6 @@ struct Scrumdinger: View {
     @State var myFirstText: String = "I am Scrumdinger App Text for you!";
     
     var body: some View {
-        VStack {
-//            Image(systemName: "globe")
-//                .imageScale(.large)
-//                .foregroundColor(.accentColor);
-//            Text("Hello world");
-            
-            // Meeting Section View
-            MeetingView();
-        }
-        .padding();
+        MeetingView();
     }
 }

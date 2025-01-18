@@ -13,7 +13,7 @@ struct ImageCard: View {
     var body: some View {
         VStack {
             // MARK: Image Cover
-            Image("ContantImage")
+            Image("ContentImage")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .cornerRadius(10)
