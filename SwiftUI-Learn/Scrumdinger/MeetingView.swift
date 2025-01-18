@@ -26,7 +26,7 @@ struct MeetingView: View {
                     Label("600", systemImage: "hourglass.bottomhalf.filled");
                 }
             }
-            
+             
             // MARK: Circle
             .accessibilityElement(children: .ignore)
             .accessibilityLabel("Time Remaining")

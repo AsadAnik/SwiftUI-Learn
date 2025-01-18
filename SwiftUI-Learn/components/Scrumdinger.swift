@@ -10,6 +10,8 @@ struct Scrumdinger: View {
     @State var myFirstText: String = "I am Scrumdinger App Text for you!";
     
     var body: some View {
-        MeetingView();
+        NavigationStack {
+            ScrumsView(scrums: DailyScrum.sampleData);
+        }
     }
 }
