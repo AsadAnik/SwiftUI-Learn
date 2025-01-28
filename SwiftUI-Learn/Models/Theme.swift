@@ -38,4 +38,9 @@ enum Theme: String {
     var mainColor: Color {
         Color(rawValue);
     }
+    
+    // MARK: Name Value
+    var name: String {
+        rawValue.capitalized
+    }
 }

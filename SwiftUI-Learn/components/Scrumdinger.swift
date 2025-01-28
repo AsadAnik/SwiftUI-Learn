@@ -15,3 +15,7 @@ struct Scrumdinger: View {
         }
     }
 }
+
+#Preview {
+    Scrumdinger()
+}
