@@ -5,7 +5,7 @@
 //  Created by Asad Anik on 1/18/25.
 import SwiftUI
 
-enum Theme: String {
+enum Theme: String, Identifiable, CaseIterable {
     case bubblegum
     case buttercup
     case indigo
@@ -42,5 +42,10 @@ enum Theme: String {
     // MARK: Name Value
     var name: String {
         rawValue.capitalized
+    }
+    
+    // MARK: Identifiable ID
+    var id: String {
+        name;
     }
 }

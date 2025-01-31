@@ -8,10 +8,11 @@ import SwiftUI
 
 struct Scrumdinger: View {
     @State var myFirstText: String = "I am Scrumdinger App Text for you!";
+    @State private var scrums = DailyScrum.sampleData;
     
     var body: some View {
         NavigationStack {
-            ScrumsView(scrums: DailyScrum.sampleData);
+            ScrumsView(scrums: $scrums);
         }
     }
 }

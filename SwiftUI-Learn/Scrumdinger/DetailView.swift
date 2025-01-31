@@ -7,9 +7,13 @@
 
 import SwiftUI
 
+// MARK: DetailView View
 struct DetailView: View {
-    let scrum: DailyScrum
+    @Binding var scrum: DailyScrum;
+    
+    // Edit View States..
     @State private var isPresentingEditView = false
+    @State private var editingScrum = DailyScrum.emptyScrum;
 
     
     var body: some View {
@@ -51,17 +55,27 @@ struct DetailView: View {
         .navigationTitle(scrum.title)
         .toolbar {
             Button("Edit") {
-                isPresentingEditView = true
+                isPresentingEditView = true;
+                editingScrum = scrum;
             }
         }
         .sheet(isPresented: $isPresentingEditView) {
             NavigationStack {
-                DetailEditView()
+                DetailEditView(scrum: $editingScrum)
                     .navigationTitle(scrum.title)
                     .toolbar {
-                        ToolbarItem(placement: .cancellationAction) {
+                        ToolbarItem(placement: .topBarLeading) {
                             Button("Cancel") {
-                                isPresentingEditView = false
+                                isPresentingEditView = false;
+                            }
+                        }
+                        
+                        ToolbarItem(placement: .topBarTrailing) {
+                            Button("Done") {
+                                isPresentingEditView = false;
+                                
+                                // Done Updates the Binding here..
+                                scrum = editingScrum;
                             }
                         }
                     }
@@ -70,10 +84,11 @@ struct DetailView: View {
     }
 }
 
+// MARK: DetailView Preview
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            DetailView(scrum: DailyScrum.sampleData[0]);
+            DetailView(scrum: .constant(DailyScrum.sampleData[0]));
         }
     }
 }

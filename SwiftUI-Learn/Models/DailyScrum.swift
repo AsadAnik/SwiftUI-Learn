@@ -36,8 +36,8 @@ struct DailyScrum: Identifiable {
     }
 }
 
+// MARK: Sample Data Array
 extension DailyScrum {
-    // MARK: Sample Data Array
     static let sampleData: [DailyScrum] = [
         DailyScrum(title: "Design", attendees: ["Cathy", "Ankara", "John"], lengthInMinutes: 5, theme: .yellow),
         DailyScrum(title: "App UI", attendees: ["Doe", "Katy", "Pavon"], lengthInMinutes: 10, theme: .orange),
@@ -46,8 +46,8 @@ extension DailyScrum {
 }
 
 
+// MARK: Attendee Data
 extension DailyScrum {
-    // MARK: Attendee Data
     struct Attendee: Identifiable {
         let id: UUID
         var name: String
